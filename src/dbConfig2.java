@@ -43,6 +43,43 @@ public class dbConfig2 {
         return primeResultSet;
 
     }
+    
+    
+    
+    static DataSet getAllData() {
+    
+        try (Connection primeConnection = DriverManager.getConnection(dbUrl)) {
+    
+        Statement statement = primeConnection.createStatement();
+    
+//        retrieveData();
+    
+        String fetchAll = "Select * From private_clinic_portal";
+    
+        ResultSet resultSet = statement.executeQuery(fetchAll);
+    
+        DataSet data = new DataSet();
+        
+        while (resultSet.next()) {
+            
+            int id = resultSet.getInt("id");
+            String  name = resultSet.getString(nameCol);
+            String doctor = resultSet.getString(doctorCol);
+            Patient p = new Patient(id, name, doctor);
+            data.addPatient(p);
+        }
+        
+        return data;
+        
+    }
+        catch (SQLException e) {
+        System.out.println("Error getting all data");
+        
+        return null;
+        }
+        
+    }
+
 
 
     static void retrieveData() throws SQLException {
