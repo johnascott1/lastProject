@@ -7,8 +7,8 @@ import java.sql.SQLException;
 class Private_Practice2 {
 
     private static ResultSet rsPrime;
-
-    private static psychModel2 psychModelPrime;
+    //No longer using psychModel.
+    //private static psychModel2 psychModelPrime;
 
     private static Private_PracticeGUI2 psychGUI;
 
@@ -17,7 +17,7 @@ class Private_Practice2 {
         practice.initialize();
     }
 
-
+    //Calls gui.
     public void initialize(){
 
 

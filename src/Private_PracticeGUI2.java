@@ -47,7 +47,7 @@ public class Private_PracticeGUI2 extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         this.manager = manager;
-
+        //data set new idea.
         DataSet data = dbConfig2.getAllData();
 
         JTableDataModel model = new JTableDataModel(data);
@@ -59,25 +59,67 @@ public class Private_PracticeGUI2 extends JFrame {
         clinicTable2.setModel(model);
 
         //columns and such
-        //JTableHeader clinicHeader = clinicTable2.getTableHeader();
+        JTableHeader clinicHeader = clinicTable2.getTableHeader();
 
-        //TableColumnModel clinicColMod = clinicHeader.getColumnModel();
+        TableColumnModel clinicColMod = clinicHeader.getColumnModel();
 
-        //TableColumn clinicColumn = clinicColMod.getColumn(0);
+        TableColumn clinicColumn = clinicColMod.getColumn(0);
 
-        //clinicColumn.setHeaderValue("id");
+        clinicColumn.setHeaderValue("id");
 
 
         //patient name
-        //clinicColumn = clinicColMod.getColumn(1);
+        clinicColumn = clinicColMod.getColumn(1);
 
-        //clinicColumn.setHeaderValue("Patient Name");
+       clinicColumn.setHeaderValue("Patient Name");
 
 
         //Doctor name
-       // clinicColumn = clinicColMod.getColumn(2);
+        clinicColumn = clinicColMod.getColumn(2);
 
-        //clinicColumn.setHeaderValue("Doctor Name");
+        clinicColumn.setHeaderValue("Doctor Name");
+
+        clinicColumn = clinicColMod.getColumn(3);
+
+        clinicColumn.setHeaderValue("Insurance Provider");
+
+        clinicColumn = clinicColMod.getColumn(4);
+
+        clinicColumn.setHeaderValue("Perscribed Medication");
+
+        clinicColumn = clinicColMod.getColumn(5);
+
+        clinicColumn.setHeaderValue("Known Allergies");
+
+        clinicColumn = clinicColMod.getColumn(6);
+
+        clinicColumn.setHeaderValue("Balance Due");
+
+        clinicColumn = clinicColMod.getColumn(7);
+
+        clinicColumn.setHeaderValue("Last Seen");
+
+        clinicColumn = clinicColMod.getColumn(8);
+
+        clinicColumn.setHeaderValue("Next Appointment");
+
+        clinicColumn = clinicColMod.getColumn(9);
+
+        clinicColumn.setHeaderValue("Diagnosed Conditions");
+
+        clinicColumn = clinicColMod.getColumn(10);
+
+        clinicColumn.setHeaderValue("Street Address");
+
+        clinicColumn = clinicColMod.getColumn(11);
+
+        clinicColumn.setHeaderValue("Email Address");
+
+        clinicColumn = clinicColMod.getColumn(12);
+
+        clinicColumn.setHeaderValue("Phone Number");
+
+
 
 
 
