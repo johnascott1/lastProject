@@ -40,7 +40,7 @@ public class dbConfig2 {
 
     final static String lastSeenCol = "Last_Seen";
 
-    final static String nextAptCol = "Next_Appointment";
+    final static String nextAptCol = "Next_Apointment";
 
     final static String conditionsCol = "Diagnosed_Conditions";
 
@@ -97,7 +97,19 @@ public class dbConfig2 {
             int id = resultSet.getInt("id");
             String  name = resultSet.getString(nameCol);
             String doctor = resultSet.getString(doctorCol);
-            Patient p = new Patient(id, name, doctor);
+            String insurance = resultSet.getString(insuranceCol);
+            String medicine = resultSet.getString(medicationCol);
+            String allergy = resultSet.getString(allergyCol);
+            String balance = resultSet.getString(balanceCol);
+
+            String lastSeen = resultSet.getString(lastSeenCol);
+            String next_appointment = resultSet.getString(nextAptCol);
+            String Conditions = resultSet.getString(conditionsCol);
+            String Address = resultSet.getString(streetAddressCol);
+            String email = resultSet.getString(emailCol);
+            String phoneNum = resultSet.getString(phoneNumCol);
+            Patient p = new Patient(id, name, doctor, insurance, medicine, allergy, balance, lastSeen, next_appointment, Conditions,
+                    Address, email, phoneNum);
             data.addPatient(p);
         }
         primeConnection.close();
@@ -138,8 +150,8 @@ public class dbConfig2 {
             checkDate.format(nextApt);
             */
             String insertString = ("INSERT INTO private_clinic_portal(patientName, doctorName, Insurance, Medication, " +
-                    " Allergies, Balance_Due, Last_Seen, Next_Appointment, Diagnosed, Street_Address, Email, Phone_Number) " +
-                    "VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,)");
+                    " Allergies, Balance_Due, Last_Seen, Next_Apointment, Diagnosed_Conditions, Street_Address, Email, Phone_Number) " +
+                    "VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             PreparedStatement updatePS = primeConnection.prepareStatement(insertString);
 
