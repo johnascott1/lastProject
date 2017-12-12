@@ -20,9 +20,7 @@ class Private_Practice2 {
 
     public void initialize(){
 
-            //rsPrime = dbConfig2.setup(dbConfig2.getPatient_table_name());
 
-            //psychModelPrime = new psychModel2(rsPrime);
 
             psychGUI = new Private_PracticeGUI2(this);
 

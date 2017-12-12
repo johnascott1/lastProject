@@ -114,15 +114,15 @@ public class Private_PracticeGUI2 extends JFrame {
 
                 //guiModel.addData(patientName, doctorName);
 
-                dbConfig2.insertData(patientName, doctorName, insurance, medication, allergy, balance, lastSeen,
+               DataSet newData = dbConfig2.insertData(patientName, doctorName, insurance, medication, allergy, balance, lastSeen,
                         nextApt, condition, Address, email, phone);
                 model.fireTableDataChanged();
-               // clinicTable2.setModel(model);
+                clinicTable2.setModel(model);
 
 
-                //JTableDataModel newModel = new JTableDataModel(newData);
+                JTableDataModel newModel = new JTableDataModel(newData);
 
-                //clinicTable2.setModel(newModel);
+                clinicTable2.setModel(newModel);
 
                // model.fireTableDataChanged();
 

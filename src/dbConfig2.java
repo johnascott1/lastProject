@@ -128,7 +128,7 @@ public class dbConfig2 {
         
     }
 
-    static void insertData(String patient, String doctor, String insurance, String medication, String Allergies,
+    static DataSet insertData(String patient, String doctor, String insurance, String medication, String Allergies,
     String balance, String lastSeen, String nextApt, String conditions, String address, String email, String phone ){
 
         try{
@@ -181,7 +181,7 @@ public class dbConfig2 {
             System.out.println("update2");
             //refresh = getAllData();
 
-            //return getAllData();
+            return getAllData();
 
         }
 
@@ -195,7 +195,7 @@ public class dbConfig2 {
 
 
 
-        //return null;
+        return null;
 
     }
 
