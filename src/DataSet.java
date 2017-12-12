@@ -16,7 +16,11 @@ public class DataSet {
     }
     
     public int getRows() {
-        return ids.size();
+        if (ids.size() > 0){
+        return ids.size();}
+        else {
+            return 0;
+        }
     }
     
     public Object valueAt(int rowIndex, int columnIndex) {

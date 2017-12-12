@@ -11,11 +11,20 @@ public class JTableDataModel extends AbstractTableModel {
     JTableDataModel(DataSet dataSet) {
         this.dataset = dataSet;
     }
-    
+
+
     
     @Override
     public int getRowCount() {
+    try {
         return dataset.getRows();
+    }
+    catch (NullPointerException noRows){
+        return 0;
+    }
+
+
+
     }
     
     @Override

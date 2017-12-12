@@ -15,9 +15,28 @@ public class Private_PracticeGUI2 extends JFrame {
     private JLabel patient_name_label2;
     private JLabel doctor_label2;
     private JScrollPane clinicScrollPane2;
+    private JTextField insuranceTextField;
+    private JTextField perscriptionTextField;
+    private JTextField allergyTextField;
+    private JTextField balanceTextField;
+    private JTextField lastSeenTextField;
+    private JTextField nextAptTextField;
+    private JTextField conditionsTextField;
+    private JTextField addressTextField;
+    private JTextField emailTextField;
+    private JTextField phoneTextField;
+    private JLabel insuranceLabel;
+    private JLabel perscriptionLabel;
+    private JLabel allergyField;
+    private JLabel balanceLabel;
+    private JLabel lastSeenLabel;
+    private JLabel conditionLabel;
+    private JLabel addressLabel;
+    private JLabel emailLabel;
+    private JLabel phoneLabel;
     Private_Practice2 manager;
 
-    public Private_PracticeGUI2(Private_Practice2 manager, psychModel2 guiModel){
+    public Private_PracticeGUI2(Private_Practice2 manager){
 
         setContentPane(clinicPanel);
 
@@ -29,32 +48,40 @@ public class Private_PracticeGUI2 extends JFrame {
 
         this.manager = manager;
 
-        clinicTable2.setModel(guiModel);
+        DataSet data = dbConfig2.getAllData();
+
+        JTableDataModel model = new JTableDataModel(data);
 
        // clinicScrollPane2.setViewportView(clinicTable2);
 
         clinicTable2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
+        clinicTable2.setModel(model);
+
         //columns and such
-        JTableHeader clinicHeader = clinicTable2.getTableHeader();
+        //JTableHeader clinicHeader = clinicTable2.getTableHeader();
 
-        TableColumnModel clinicColMod = clinicHeader.getColumnModel();
+        //TableColumnModel clinicColMod = clinicHeader.getColumnModel();
 
-        TableColumn clinicColumn = clinicColMod.getColumn(0);
+        //TableColumn clinicColumn = clinicColMod.getColumn(0);
 
-        clinicColumn.setHeaderValue("id");
+        //clinicColumn.setHeaderValue("id");
 
 
         //patient name
-        clinicColumn = clinicColMod.getColumn(1);
+        //clinicColumn = clinicColMod.getColumn(1);
 
-        clinicColumn.setHeaderValue("Patient Name");
+        //clinicColumn.setHeaderValue("Patient Name");
 
 
         //Doctor name
-        clinicColumn = clinicColMod.getColumn(2);
+       // clinicColumn = clinicColMod.getColumn(2);
 
-        clinicColumn.setHeaderValue("Doctor Name");
+        //clinicColumn.setHeaderValue("Doctor Name");
+
+
+
+
 
 
         addPatientData2.addActionListener(new ActionListener() {
@@ -65,7 +92,39 @@ public class Private_PracticeGUI2 extends JFrame {
 
                 String doctorName = doctor_textField2.getText();
 
-                guiModel.addData(patientName, doctorName);
+                String insurance = insuranceTextField.getText();
+
+                String medication = perscriptionTextField.getText();
+
+                String allergy = allergyTextField.getText();
+
+                String balance = balanceTextField.getText();
+
+                String lastSeen = lastSeenTextField.getText();
+
+                String nextApt = nextAptTextField.getText();
+
+                String condition = conditionsTextField.getText();
+
+                String Address = addressTextField.getText();
+
+                String email = emailTextField.getText();
+
+                String phone = phoneTextField.getText();
+
+                //guiModel.addData(patientName, doctorName);
+
+                dbConfig2.insertData(patientName, doctorName, insurance, medication, allergy, balance, lastSeen,
+                        nextApt, condition, Address, email, phone);
+                model.fireTableDataChanged();
+               // clinicTable2.setModel(model);
+
+
+                //JTableDataModel newModel = new JTableDataModel(newData);
+
+                //clinicTable2.setModel(newModel);
+
+               // model.fireTableDataChanged();
 
             }
         });

@@ -18,12 +18,12 @@ public class psychModel2 extends AbstractTableModel {
 
         this.initModelRS = modelRS;
 
-        start();
+        //start();
 
     }
 
 
-    private void start(){
+    /*private void start(){
         rowSum();
 
         try {
@@ -34,7 +34,7 @@ public class psychModel2 extends AbstractTableModel {
             startException.printStackTrace();
         }
 
-    }
+    }*/
 
     @Override
     public String getColumnName(int index) {
@@ -43,12 +43,12 @@ public class psychModel2 extends AbstractTableModel {
 
     }
 
-    public void updateResultSet(ResultSet updateRS){
+   /* public void updateResultSet(ResultSet updateRS){
         initModelRS = updateRS;
-        start();
-    }
+      //  start();
+    }*/
 
-    public void rowSum(){
+   /* public void rowSum(){
         rowCount = 0;
 
         try {
@@ -62,12 +62,12 @@ public class psychModel2 extends AbstractTableModel {
         catch (SQLException countRowError){
             countRowError.printStackTrace();
         }
-    }
+    }*/
 
 
     @Override
     public int getRowCount() {
-        rowSum();
+        //rowSum();
         return rowCount;
     }
 

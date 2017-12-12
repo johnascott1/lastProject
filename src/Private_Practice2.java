@@ -19,18 +19,16 @@ class Private_Practice2 {
 
 
     public void initialize(){
-        try {
-            rsPrime = dbConfig2.setup(dbConfig2.getPatient_table_name());
 
-            psychModelPrime = new psychModel2(rsPrime);
+            //rsPrime = dbConfig2.setup(dbConfig2.getPatient_table_name());
 
-            psychGUI = new Private_PracticeGUI2(this, psychModelPrime);
+            //psychModelPrime = new psychModel2(rsPrime);
 
-        }
+            psychGUI = new Private_PracticeGUI2(this);
 
-        catch (SQLException initializeError){
-            initializeError.getErrorCode();
-        }
+
+
+
     }
 }
 
